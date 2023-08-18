@@ -5,7 +5,7 @@ import "../css/Form.css";
 
 export default function Form() {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [date, setDate] = useState("");
   const [image, setImage] = useState(null);
   const [contentText, setContentText] = useState("");
   const [showDownloadButton, setShowDownloadButton] = useState(false);
@@ -15,9 +15,9 @@ export default function Form() {
     setName(nameValue);
   };
 
-  const handleEmailChange = (element) => {
-    const emailValue = element.target.value;
-    setEmail(emailValue);
+  const handleDateChange = (element) => {
+    const dateValue = element.target.value;
+    setDate(dateValue);
   };
 
   const handleImageChange = (element) => {
@@ -26,7 +26,14 @@ export default function Form() {
   };
 
   const handleCreate = () => {
-    setContentText(`My name is ${name} and my email is ${email}`);
+
+    const parsedDate = new Date(date); // Parse the selected date string
+    const day = parsedDate.getDate().toString().padStart(2, "0");
+    const month = (parsedDate.getMonth() + 1).toString().padStart(2, "0");
+    const year = parsedDate.getFullYear();
+    const formattedDate = `${day}-${month}-${year}`;
+  
+  setContentText(`My name is ${name} and my date is ${formattedDate}`);
     setShowDownloadButton(true);
     $("#box").show(); // Show the box after button click
   };
@@ -62,15 +69,14 @@ export default function Form() {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="name">Email</label>
+            <label htmlFor="name">Date</label>
             <input
-              type="email"
+              type="date"
               className="form-control"
-              id="exampleInputEmail"
-              name="email"
-              placeholder="Enter Email"
-              value={email}
-              onChange={handleEmailChange}
+              id="exampleInputDate"
+              name="date"
+              value={date}
+              onChange={handleDateChange}
             />
           </div>
           <div className="form-group">
@@ -94,7 +100,7 @@ export default function Form() {
           Download Poster
         </button>
       )}
-      
+
       <div className="center-container mt-3 box">
         <div className="center-form" id="box" style={{ display: "none" }}>
           <div className="passport-photo-box">
