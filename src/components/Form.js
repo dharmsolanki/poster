@@ -24,19 +24,30 @@ export default function Form() {
     const selectedImage = element.target.files[0];
     setImage(selectedImage);
   };
-
   const handleCreate = () => {
+      if (name && date && image) {
+      const parsedDate = new Date(date); // Parse the selected date string
+      const day = parsedDate.getDate().toString().padStart(2, "0");
+      const month = (parsedDate.getMonth() + 1).toString().padStart(2, "0");
+      const year = parsedDate.getFullYear();
+      const formattedDate = `${day}-${month}-${year}`;
 
-    const parsedDate = new Date(date); // Parse the selected date string
-    const day = parsedDate.getDate().toString().padStart(2, "0");
-    const month = (parsedDate.getMonth() + 1).toString().padStart(2, "0");
-    const year = parsedDate.getFullYear();
-    const formattedDate = `${day}-${month}-${year}`;
-  
-  setContentText(`My name is ${name} and my date is ${formattedDate}`);
-    setShowDownloadButton(true);
-    $("#box").show(); // Show the box after button click
-  };
+      setContentText(
+        <p>
+          શ્રદ્ધાંજલિ આદર્શ આત્મા {name}, આપના આત્માની શ્રદ્ધા અને યાદેલા વચનો
+          યાદ રહેશે. તમારી દયા, મમતા અને આદરને યાદીને રહેશે. તમારી અદ્વિતીય
+          વ્યક્તિગતા અને સમર્પણ અમને માર્ગદર્શન આપ્યો છે. તમે જીવનમાં પરંતુ
+          જીવનથી પરેશાન છીએ, તમારી આત્મા અમને હંમેશાં માર્ગદર્શન આપશે. તમે
+          હંમેશાં અમારી સ્મૃતિઓમાં જીવંત રહીશો. આત્માની શાંતિ માટે આપના પ્રિય{" "}
+          {name} ને ભગવાન સુખ-શાંતિ આપે અને તમારી પરિપત્રનામાં તમારી આત્માનો શોક
+          સહાય કરે. તમે હંમેશાં આમને પ્રેમ, આદર અને માર્ગદર્શન આપી છે, તમારી
+          યાદેલી વચનો અમને હંમેશાં માર્ગદર્શિત રહેશે.
+        </p>
+      );
+      setShowDownloadButton(true);
+      $("#box").show(); // Show the box after button click
+    };
+  }
 
   const handleDownload = () => {
     // Capture the content of the box as an image using html2canvas
@@ -119,7 +130,6 @@ export default function Form() {
           </div>
         </div>
       </div>
-      
     </>
   );
 }
