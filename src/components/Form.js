@@ -33,16 +33,14 @@ export default function Form() {
       const formattedDate = `${day}-${month}-${year}`;
 
       setContentText(
-        <p>
-          શ્રદ્ધાંજલિ આદર્શ આત્મા {name}, આપના આત્માની શ્રદ્ધા અને યાદેલા વચનો
-          યાદ રહેશે. તમારી દયા, મમતા અને આદરને યાદીને રહેશે. તમારી અદ્વિતીય
-          વ્યક્તિગતા અને સમર્પણ અમને માર્ગદર્શન આપ્યો છે. તમે જીવનમાં પરંતુ
-          જીવનથી પરેશાન છીએ, તમારી આત્મા અમને હંમેશાં માર્ગદર્શન આપશે. તમે
-          હંમેશાં અમારી સ્મૃતિઓમાં જીવંત રહીશો. આત્માની શાંતિ માટે આપના પ્રિય{" "}
-          {name} ને ભગવાન સુખ-શાંતિ આપે અને તમારી પરિપત્રનામાં તમારી આત્માનો શોક
-          સહાય કરે. તમે હંમેશાં આમને પ્રેમ, આદર અને માર્ગદર્શન આપી છે, તમારી
-          યાદેલી વચનો અમને હંમેશાં માર્ગદર્શિત રહેશે.
-        </p>
+
+        <div className="container set-content">
+          {/* <h1>બેસણું</h1> */}
+          <h1>દુ:ખદ અવસાન</h1>
+          <h4>સ્વ: {name}</h4>
+          <p>દિલગીરી સાથ જણાવવાનુ કે અમારા માતાશ્રી {name} તારીખ: {formattedDate} ના રોજ દેવલોક પામ્યા છે, તો ભગવાન તેમાના દિવ્ય આત્માને શાંતિ અર્પે એવી પ્રાર્થના.</p>
+          
+        </div>
       );
       setShowDownloadButton(true);
       $("#box").show(); // Show the box after button click
@@ -114,6 +112,11 @@ export default function Form() {
 
       <div className="center-container mt-3 box">
         <div className="center-form" id="box" style={{ display: "none" }}>
+          <div className="top-header">
+            <h3 className="first">|| ॐ ||</h3>
+            <h3 className="center">|| શાંતિ ||</h3>
+            <h3 className="last">|| ॐ ||</h3>
+          </div>
           <div className="passport-photo-box">
             {image && (
               <img
