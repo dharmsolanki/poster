@@ -183,7 +183,7 @@ export default function Form() {
           </div>
 
           <div className="form-group" id="div_family_member">
-            <label htmlFor="name">Family Member Name</label>
+            <label htmlFor="name">પરિવારના ચાર સભ્યોના નામ</label>
             {familyMembers.map((member, index) => (
               <div className="input-group mb-2" key={index}>
                 <input
@@ -209,6 +209,7 @@ export default function Form() {
             <button
               className="btn btn-primary btn-sm"
               type="button"
+              style={{margin:'5px'}}
               onClick={handleAddMember}
             >
               Add More
