@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #01012c;
+}
 .center-container {
   display: flex;
   justify-content: center;
@@ -9,23 +14,23 @@
   /* text-align: center; */
   padding: 20px;
   border: 1px solid #ccc;
-  background-color: #f5f5f5;
+  background-color: bisque;
 }
 
 .box .center-form {
-  background-color: white;
+  background-color: bisque;
   display: flex;
   flex-direction: column;
   /* Stack content vertically */
   align-items: center;
   height: 720px;
-  width: 720px;
+  width: 480px;
 }
 
 .passport-photo-box {
   border: 2px solid;
   height: 200px;
-  width: 200px;
+  width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,7 +46,7 @@
   /* Add space between passport photo and content */
 }
 
-.set-content h1 {
+.set-content h2 h3 h4 {
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
   font-weight: bold;
@@ -54,6 +59,16 @@
 .content {
   text-align: center;
   margin-top: 20px;
+  width: 100%;
+  display: inline-block;
+}
+
+.content h3 {
+  margin-top: -15px;
+}
+.content p p {
+  text-align: justify;
+  margin-top: 2px;
   width: 100%;
   display: inline-block;
 }
@@ -96,4 +111,71 @@
   font-size: large;
   margin-right: 5px;
   margin-top: 5px;
+}
+
+.besanu {
+
+  color: white;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  background-color: #01012c;
+  margin-top: -20px;
+  
+}
+
+.besanu h2 {
+  margin-bottom: 2px;
+}
+
+.besanu h3 {
+  
+  font-size: 20px;
+  margin: 5px;
+}
+
+.besanu h3 span {
+
+  display: inline-block;
+  font-size: medium;
+}
+
+.besna-date {
+
+  margin-bottom: -5px;
+}
+
+.besna-time {
+
+  margin-bottom: -5px;
+}
+
+.btn-download {
+
+  margin-top: 10px;
+
+}
+
+.contact-details {
+
+  background-color: #01012c;
+  margin-top: 65px;
+  display: inline-block;
+  width: 100%;
+  color: white;
+}
+
+.contact-details h3 {
+
+  margin: 5px;
+  font-size: larger;
+}
+
+.contact-details h3 span {
+
+  font-size: medium;
+}
+
+.family-members h4 {
+  text-align: center;
 }
