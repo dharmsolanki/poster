@@ -208,3 +208,26 @@ dl, ol, ul {
   margin-bottom: 1rem;
   margin-top: -10px;
 }
+
+/* Existing styles ... */
+
+@media (max-width: 768px) {
+  .center-form {
+    width: 80%; /* Adjust the width to your preference */
+    margin: 20px auto; /* Center the form */
+  }
+
+  .box .center-form {
+    width: 90%; /* Adjust the width to your preference */
+    border: 2px double green;
+    height: auto; /* Allow content to expand vertically */
+  }
+
+  .passport-photo-box {
+    width: 100px; /* Adjust the width to your preference */
+  }
+
+  /* Add any other responsive adjustments as needed */
+}
+
+/* Rest of the existing styles ... */
