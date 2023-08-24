@@ -5,7 +5,7 @@ function Footer() {
 
   return (
     <footer className="bg-light text-black text-center py-2 mt-3">
-      <p>&copy; {currentYear} Company, Inc. All rights reserved.</p>
+      <p>&copy; {currentYear} Shradhanjali Posters, Inc. All rights reserved.</p>
     </footer>
   );
 }
