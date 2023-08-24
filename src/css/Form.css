@@ -1,7 +1,10 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #01012c;
+  /* background-color: #01012c; */
+  background-image: url('/public/body-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .center-container {
   display: flex;
@@ -15,12 +18,17 @@ body {
   padding: 20px;
   border: 1px solid #ccc;
   background-color: bisque;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .box .center-form {
-  background-color: bisque;
+  /* background-color: bisque; */
+  background-image: url('/public/bg.jpg');
+  border: 4px double green;
   display: flex;
   flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
   /* Stack content vertically */
   align-items: center;
   height: 720px;
@@ -38,7 +46,7 @@ body {
 
 .passport-photo-image {
 
-  border: 1px solid grey;
+  border: 3px dotted green;
 }
 
 .content {
@@ -82,6 +90,7 @@ body {
   background-color: #01012c;
   text-align: center;
   margin: 10px;
+  margin-top: -5px;
 }
 
 .top-header h3 {
@@ -152,14 +161,14 @@ body {
 
 .btn-download {
 
-  margin-top: 10px;
+  margin-top: 35px;
 
 }
 
 .contact-details {
 
   background-color: #01012c;
-  margin-top: 20px;
+  margin-top: -13px;
   display: inline-block;
   width: 100%;
   color: white;
@@ -178,4 +187,24 @@ body {
 
 .family-members h4 {
   text-align: center;
+}
+
+.left-right-img .left {
+  float: left;
+  margin: -198px;
+  margin-left: -235px;
+  border: 3px dotted green;
+}
+
+.left-right-img .right {
+  float: right;
+  margin: -200px;
+  margin-right: -235px;
+  border: 3px dotted green;
+}
+
+dl, ol, ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  margin-top: -10px;
 }

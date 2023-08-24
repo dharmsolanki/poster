@@ -15,6 +15,7 @@ export default function Form() {
   const [image, setImage] = useState(null);
   const [contentText, setContentText] = useState("");
   const [showDownloadButton, setShowDownloadButton] = useState(false);
+  const currentYear = new Date().getFullYear();
 
   const handleNameChange = (element) => {
     const nameValue = element.target.value;
@@ -61,9 +62,9 @@ export default function Form() {
           <h3>દુ:ખદ અવસાન</h3>
           <h4>સ્વ: {name}</h4>
           <p>
-            દિલગીરી સાથ જણાવવાનુ કે {name}, તારીખ: {gujaratiFormattedDate} ના
-            રોજ દેવલોક પામ્યા છે, તો ભગવાન તેમાના દિવ્ય આત્માને શાંતિ અર્પે એવી
-            પ્રાર્થના.
+            દિલગીરી સાથ જણાવવાનુ કે <b>{name}</b>, તારીખ:{" "}
+            {gujaratiFormattedDate} ના રોજ દેવલોક પામ્યા છે, તો ભગવાન તેમાના
+            દિવ્ય આત્માને શાંતિ અર્પે એવી પ્રાર્થના.
           </p>
         </div>
       );
@@ -116,6 +117,10 @@ export default function Form() {
     // Format the parsed time as 12-hour format with AM/PM
     formattedBesanaTime = format(parsedTime, "hh:mm a", { locale: gu });
   }
+
+  const roseImgSrc = "/rose.png";
+  const flowerImgSrc = "/flower.png";
+  const numImages = 12;
 
   return (
     <>
@@ -209,7 +214,7 @@ export default function Form() {
             <button
               className="btn btn-primary btn-sm"
               type="button"
-              style={{margin:'5px'}}
+              style={{ margin: "5px" }}
               onClick={handleAddMember}
             >
               Add More
@@ -252,6 +257,34 @@ export default function Form() {
                 width="150px"
               />
             )}
+          </div>
+          <div className="left-right-img">
+            <img
+              src="/agarbatti.jpg"
+              alt="left"
+              className="left"
+              height="200px"
+              width="150px"
+            />
+            <img
+              src="/agarbatti.jpg"
+              alt="right"
+              className="right"
+              height="200px"
+              width="150px"
+            />
+          </div>
+          <div className="flower-img">
+            {Array.from({ length: numImages }).map((_, index) => (
+              <img
+                key={index}
+                src={roseImgSrc}
+                alt={`Image ${index + 1}`}
+                className="rose"
+                height="20px"
+                width="20px"
+              />
+            ))}
           </div>
           <div className="content">
             <p>{contentText}</p>
