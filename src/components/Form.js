@@ -214,6 +214,7 @@ export default function Form() {
               type="button"
               style={{ margin: "5px" }}
               onClick={handleAddMember}
+              disabled={familyMembers.length === 4}
             >
               Add More
             </button>
@@ -232,6 +233,7 @@ export default function Form() {
             className="btn btn-success"
             style={{ width: "100%" }}
             onClick={handleCreate}
+            disabled={familyMembers.length === 0 || familyMembers.length <= 2}
           >
             Create
           </button>

@@ -23,8 +23,8 @@ body {
 }
 
 .box .center-form {
-  /* background-color: bisque; */
-  background-image: url('/public/bg.jpg');
+  background-color: bisque;
+  /* background-image: url('/public/bg.jpg'); */
   border: 4px double green;
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@ body {
 
 .passport-photo-image {
 
-  border: 3px dotted green;
+  border: 3px solid black ;
 }
 
 .content {
@@ -193,15 +193,33 @@ body {
   float: left;
   margin: -198px;
   margin-left: -235px;
-  border: 3px dotted green;
+  /* border: 3px dotted green; */
 }
 
 .left-right-img .right {
   float: right;
   margin: -200px;
   margin-right: -235px;
-  border: 3px dotted green;
+  /* border: 3px dotted green; */
 }
+
+
+@media (max-width: 375px) and (max-height: 667px) {
+  .left-right-img .left {
+    float: left;
+    margin-left: -197px;
+    margin-right: initial; /* Reset margin-right */
+    border: 3px dotted green;
+  }
+
+  .left-right-img .right {
+    float: right;
+    margin-right: -200px;
+    margin-left: initial; /* Reset margin-left */
+    border: 3px dotted green;
+  }
+}
+
 
 dl, ol, ul {
   margin-top: 0;
@@ -231,3 +249,26 @@ dl, ol, ul {
 }
 
 /* Rest of the existing styles ... */
+
+/* Example media query for screens with a max width of 768px */
+@media (max-width: 768px) {
+  .center-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .center-form {
+    width: 90%;
+  }
+
+  .box .center-form {
+    width: 100%;
+  }
+
+  .passport-photo-box {
+    width: 80px;
+  }
+
+  /* Adjust other styles as needed */
+}
+
