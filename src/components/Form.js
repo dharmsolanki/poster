@@ -15,7 +15,6 @@ export default function Form() {
   const [image, setImage] = useState(null);
   const [contentText, setContentText] = useState("");
   const [showDownloadButton, setShowDownloadButton] = useState(false);
-  const currentYear = new Date().getFullYear();
 
   const handleNameChange = (element) => {
     const nameValue = element.target.value;
@@ -119,7 +118,6 @@ export default function Form() {
   }
 
   const roseImgSrc = "/rose.png";
-  const flowerImgSrc = "/flower.png";
   const numImages = 12;
 
   return (
@@ -279,7 +277,7 @@ export default function Form() {
               <img
                 key={index}
                 src={roseImgSrc}
-                alt={`Image ${index + 1}`}
+                alt={`img ${index + 1}`}
                 className="rose"
                 height="20px"
                 width="20px"
