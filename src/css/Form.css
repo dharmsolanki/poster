@@ -272,3 +272,36 @@ dl, ol, ul {
   /* Adjust other styles as needed */
 }
 
+@media (max-width: 414px) {
+
+  .left-right-img .left {
+
+    margin-left: -200px;
+  }
+
+  .left-right-img .right {
+
+    margin-right: -200px;
+  }
+  
+}
+
+@media (max-width: 360px) {
+
+  .left-right-img .left {
+
+    margin-left: -200px;
+  }
+
+  .left-right-img .right {
+
+    margin-right: -200px;
+  }
+
+  .box {
+    margin: -20px;
+    margin-left: 2px;
+}
+  
+}
+
