@@ -57,7 +57,7 @@ export default function Form() {
       });
 
       setContentText(
-        <div className="container set-content improve-text-sharpness">
+        <div className="container set-content">
           <h3>દુ:ખદ અવસાન</h3>
           <h4>સ્વ: {name}</h4>
           <p>
@@ -80,6 +80,7 @@ export default function Form() {
       const ctx = resizedCanvas.getContext("2d");
       resizedCanvas.width = 720;
       resizedCanvas.height = 1080;
+      
       ctx.drawImage(
         canvas,
         0,
@@ -259,13 +260,13 @@ export default function Form() {
       </div>
 
       <div className="center-container mt-3 box">
-        <div className="center-form improve-text-sharpness" id="box" style={{ display: "none" }}>
+        <div className="center-form" id="box" style={{ display: "none" }}>
           <div className="top-header">
             <h3 className="first">|| ॐ ||</h3>
             <h3 className="center">|| શાંતિ ||</h3>
             <h3 className="last">|| ॐ ||</h3>
           </div>
-          <div className="passport-photo-box improve-text-sharpness">
+          <div className="passport-photo-box">
             {image && (
               <img
                 src={URL.createObjectURL(image)}
@@ -304,10 +305,10 @@ export default function Form() {
               />
             ))}
           </div>
-          <div className="content improve-text-sharpness">
+          <div className="content">
             <p>{contentText}</p>
           </div>
-          <div className="besanu improve-text-sharpness">
+          <div className="besanu">
             <h2>
               <u>-:બેસણું:-</u>
             </h2>
@@ -318,7 +319,7 @@ export default function Form() {
               સમય: <span>{formattedBesanaTime}</span>
             </h3>
           </div>
-          <div className="family-members improve-text-sharpness">
+          <div className="family-members">
             <h4>.... લી ....</h4>
             <ol>
               {familyMembers.map((familyMember, index) => (
@@ -326,7 +327,7 @@ export default function Form() {
               ))}
             </ol>
           </div>
-          <div className="contact-details improve-text-sharpness">
+          <div className="contact-details">
             <div className="text-center">
               <h3>
                 મોબાઇલ નંબર : <span>{moNo}</span>{" "}
