@@ -98,7 +98,7 @@ export default function Form() {
       // Create a temporary link and trigger a download of the resized image
       const link = document.createElement("a");
       link.href = imageDataURL;
-      link.download = "poster_image.png";
+      link.download = "shradhanjali posters.png";
       link.click();
     });
   };
