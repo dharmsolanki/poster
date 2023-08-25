@@ -57,7 +57,7 @@ export default function Form() {
       });
 
       setContentText(
-        <div className="container set-content">
+        <div className="container set-content improve-text-sharpness">
           <h3>દુ:ખદ અવસાન</h3>
           <h4>સ્વ: {name}</h4>
           <p>
@@ -75,16 +75,34 @@ export default function Form() {
   const handleDownload = () => {
     // Capture the content of the box as an image using html2canvas
     html2canvas(document.getElementById("box")).then((canvas) => {
-      // Convert the canvas to an image data URL
-      const imageDataURL = canvas.toDataURL("image/png");
-
-      // Create a temporary link and trigger a download of the image
+      // Resize the canvas to the desired dimensions (960x1280)
+      const resizedCanvas = document.createElement("canvas");
+      const ctx = resizedCanvas.getContext("2d");
+      resizedCanvas.width = 720;
+      resizedCanvas.height = 1080;
+      ctx.drawImage(
+        canvas,
+        0,
+        0,
+        canvas.width,
+        canvas.height,
+        0,
+        0,
+        resizedCanvas.width,
+        resizedCanvas.height
+      );
+  
+      // Convert the resized canvas to an image data URL
+      const imageDataURL = resizedCanvas.toDataURL("image/png");
+  
+      // Create a temporary link and trigger a download of the resized image
       const link = document.createElement("a");
       link.href = imageDataURL;
       link.download = "poster_image.png";
       link.click();
     });
   };
+  
 
   const handleAddMember = () => {
     setFamilyMembers([...familyMembers, ""]);
@@ -241,13 +259,13 @@ export default function Form() {
       </div>
 
       <div className="center-container mt-3 box">
-        <div className="center-form" id="box" style={{ display: "none" }}>
+        <div className="center-form improve-text-sharpness" id="box" style={{ display: "none" }}>
           <div className="top-header">
             <h3 className="first">|| ॐ ||</h3>
             <h3 className="center">|| શાંતિ ||</h3>
             <h3 className="last">|| ॐ ||</h3>
           </div>
-          <div className="passport-photo-box">
+          <div className="passport-photo-box improve-text-sharpness">
             {image && (
               <img
                 src={URL.createObjectURL(image)}
@@ -286,10 +304,10 @@ export default function Form() {
               />
             ))}
           </div>
-          <div className="content">
+          <div className="content improve-text-sharpness">
             <p>{contentText}</p>
           </div>
-          <div className="besanu">
+          <div className="besanu improve-text-sharpness">
             <h2>
               <u>-:બેસણું:-</u>
             </h2>
@@ -300,7 +318,7 @@ export default function Form() {
               સમય: <span>{formattedBesanaTime}</span>
             </h3>
           </div>
-          <div className="family-members">
+          <div className="family-members improve-text-sharpness">
             <h4>.... લી ....</h4>
             <ol>
               {familyMembers.map((familyMember, index) => (
@@ -308,7 +326,7 @@ export default function Form() {
               ))}
             </ol>
           </div>
-          <div className="contact-details">
+          <div className="contact-details improve-text-sharpness">
             <div className="text-center">
               <h3>
                 મોબાઇલ નંબર : <span>{moNo}</span>{" "}

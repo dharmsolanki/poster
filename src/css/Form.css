@@ -47,6 +47,7 @@ body {
 .passport-photo-image {
 
   border: 3px solid black ;
+  image-rendering: crisp-edges;
 }
 
 .content {
@@ -304,4 +305,10 @@ dl, ol, ul {
 }
   
 }
+
+.improve-text-sharpness {
+  /* Apply filters to improve text sharpness */
+  filter: contrast(1) brightness(1) saturate(1) blur(0.5px);
+}
+
 
