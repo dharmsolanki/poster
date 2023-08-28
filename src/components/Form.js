@@ -80,7 +80,7 @@ export default function Form() {
       const ctx = resizedCanvas.getContext("2d");
       resizedCanvas.width = 720;
       resizedCanvas.height = 1080;
-      
+
       ctx.drawImage(
         canvas,
         0,
@@ -92,10 +92,10 @@ export default function Form() {
         resizedCanvas.width,
         resizedCanvas.height
       );
-  
+
       // Convert the resized canvas to an image data URL
       const imageDataURL = resizedCanvas.toDataURL("image/png");
-  
+
       // Create a temporary link and trigger a download of the resized image
       const link = document.createElement("a");
       link.href = imageDataURL;
@@ -103,7 +103,6 @@ export default function Form() {
       link.click();
     });
   };
-  
 
   const handleAddMember = () => {
     setFamilyMembers([...familyMembers, ""]);
@@ -141,7 +140,7 @@ export default function Form() {
 
   return (
     <>
-      <div className="center-container">
+      <div className="center-container mt-3">
         <div className="center-form">
           <div className="form-group">
             <label htmlFor="name">નામ</label>
@@ -340,7 +339,8 @@ export default function Form() {
       {showDownloadButton && (
         <div className="text-center">
           <button
-            className="btn btn-primary btn-download"
+            className="btn btn-success btn-download"
+            style={{ width: "100%" }}
             onClick={handleDownload}
           >
             Download Image

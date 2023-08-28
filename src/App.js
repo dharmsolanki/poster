@@ -1,20 +1,27 @@
-import "./App.css";
+// import "./App.css";
 import Footer from "./components/Footer";
 import Form from "./components/Form";
+import Index from "./components/Index";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Shrandhanjali from "./components/Shrandhanjali";
 
 function App() {
   return (
     <>
-      <div className="container my-5">
-        <Form />
-      </div>
-      <div className="d-flex flex-column">
-        {/* Your main content */}
-        <div className="flex-grow-1">{/* Your content here */}</div>
-
-        {/* Footer */}
-        <Footer />
-      </div>
+      <BrowserRouter>
+        <div className="container mt-5">
+          <Routes>
+            <Route path="/" exact element={<Index />} />
+          </Routes>
+          <Routes>
+            <Route path="/shradhanjali-poster" exact element={<Shrandhanjali />} />
+          </Routes>
+        </div>
+        <Routes>
+          <Route path="/besana-poster" exact element={<Form />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
     </>
   );
 }

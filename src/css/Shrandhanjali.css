@@ -1,0 +1,96 @@
+body {
+
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+
+}
+
+.poster {
+    width: 720px;
+    height: 1080px;
+    margin: 20px auto;
+    background-color: black;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.poster-header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.poster-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.poster-content {
+    padding: 10px;
+}
+
+.poster-content h2 {
+    margin: 45px;
+    font-size: 80px;
+    color: goldenrod;
+    text-shadow: 4px 4px 4px rgb(224, 209, 7);
+}
+
+.poster-content h3 {
+
+    color: white;
+    text-shadow: 2px 2px 2px rgb(224, 209, 7);
+    font-size: 45px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* Rest of your existing styles */
+
+.golden-border {
+
+    border: 15px double goldenrod;
+    padding: 20px;
+}
+
+/* ... Existing styles ... */
+
+.frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 50px auto 20px;
+    position: relative;
+}
+
+.centered-image {
+    width: 500px;
+    height: 500px;
+    margin-top: 100px;
+    image-rendering: auto;
+    position: absolute;
+    z-index: 2;
+    /* Ensure the centered image is on top */
+}
+
+.lamp-image img {
+
+    height: 100px;
+    width: 200px;
+    filter: brightness(200%);
+}
+
+.poster-image .upload-image {
+
+    z-index: 1;
+    margin-top: 100px;
+    height: 350px;
+    width: 250px;
+  }
