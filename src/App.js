@@ -1,9 +1,9 @@
 // import "./App.css";
-import Footer from "./components/Footer";
-import Form from "./components/Form";
-import Index from "./components/Index";
+import Footer from "./components/Footer.js";
+import Form from "./components/Form.js";
+import Index from "./components/Index.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Shrandhanjali from "./components/Shrandhanjali";
+import Shrandhanjali from "./components/Shrandhanjali.js";
 
 function App() {
   return (
