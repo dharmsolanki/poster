@@ -91,22 +91,22 @@ export default function Shrandhanjali() {
             <div className="poster-image">
               <div className="frame">
                 <img
-                  src={process.env.PUBLIC_URL + "/golden-frame.png"}
+                  src={process.env.PUBLIC_URL + "/images/golden-frame.png"}
                   className="centered-image"
                   alt=""
                 />
 
                 <img src={posterImage} alt="" className="upload-image" />
               </div>
-                <img src={process.env.PUBLIC_URL + "/golden-diya-stand.png"} alt="" className="left-diya-stand" height="auto" width="250px" />
-                <img src={process.env.PUBLIC_URL + "/golden-diya-stand.png"} alt="" className="right-diya-stand" height="auto" width="250px" />
+                <img src={process.env.PUBLIC_URL + "/images/golden-diya-stand.png"} alt="" className="left-diya-stand" height="auto" width="250px" />
+                <img src={process.env.PUBLIC_URL + "/images/golden-diya-stand.png"} alt="" className="right-diya-stand" height="auto" width="250px" />
             </div>
             <div className="poster-content">
               <div className="horizontal-scroll-content">
                 <h3>સ્વ: {posterName}</h3>
                 <h2>ભાવપૂર્ણ શ્રદ્ધાંજલિ</h2>
                 <div className="lamp-image">
-                  <img src={process.env.PUBLIC_URL + "/diya.jpg"} alt="" />
+                  <img src={process.env.PUBLIC_URL + "/images/diya.jpg"} alt="" />
                 </div>
               </div>
             </div>

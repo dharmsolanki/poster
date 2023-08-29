@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   /* background-color: #01012c; */
-  background-image: url('/public/body-bg.jpg');
+  background-image: url('/public/images/body-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -16,16 +16,16 @@ body {
 .center-form {
   /* text-align: center; */
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid goldenrod;
   background-color: bisque;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .box .center-form {
-  background-color: bisque;
-  /* background-image: url('/public/bg.jpg'); */
-  border: 4px double green;
+  background-color: black;
+  color: white;
+  border: 4px double goldenrod;
   display: flex;
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
@@ -46,7 +46,7 @@ body {
 
 .passport-photo-image {
 
-  border: 3px solid black ;
+  border: 3px solid goldenrod ;
   image-rendering: crisp-edges;
 }
 
@@ -194,14 +194,12 @@ body {
   float: left;
   margin: -198px;
   margin-left: -235px;
-  /* border: 3px dotted green; */
 }
 
 .left-right-img .right {
   float: right;
   margin: -200px;
   margin-right: -235px;
-  /* border: 3px dotted green; */
 }
 
 
@@ -210,14 +208,12 @@ body {
     float: left;
     margin-left: -197px;
     margin-right: initial; /* Reset margin-right */
-    border: 3px dotted green;
   }
 
   .left-right-img .right {
     float: right;
     margin-right: -200px;
     margin-left: initial; /* Reset margin-left */
-    border: 3px dotted green;
   }
 }
 
@@ -237,8 +233,8 @@ dl, ol, ul {
   }
 
   .box .center-form {
-    width: 90%; /* Adjust the width to your preference */
-    border: 2px double green;
+    width: 100%; /* Adjust the width to your preference */
+    border: 4px solid goldenrod;
     height: auto; /* Allow content to expand vertically */
   }
 
@@ -263,7 +259,9 @@ dl, ol, ul {
   }
 
   .box .center-form {
+
     width: 100%;
+    margin-left: 20px;
   }
 
   .passport-photo-box {
@@ -272,37 +270,3 @@ dl, ol, ul {
 
   /* Adjust other styles as needed */
 }
-
-@media (max-width: 425px) {
-
-  .left-right-img .left {
-
-    margin-left: -200px;
-  }
-
-  .left-right-img .right {
-
-    margin-right: -200px;
-  }
-  
-}
-
-@media (max-width: 375px) {
-
-  .left-right-img .left {
-
-    margin-left: -200px;
-  }
-
-  .left-right-img .right {
-
-    margin-right: -200px;
-  }
-
-  .box {
-    margin: -20px;
-    margin-left: 2px;
-}
-  
-}
-

@@ -33,8 +33,10 @@ body {
 
 .poster-content {
     padding: 10px;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    white-space: nowrap; /* Prevent content from wrapping */
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    white-space: nowrap;
+    /* Prevent content from wrapping */
 }
 
 .poster-content h2 {
@@ -95,26 +97,26 @@ body {
     margin-top: 100px;
     height: 350px;
     width: 250px;
-  }
+}
 
-  .poster-image .left-diya-stand {
+.poster-image .left-diya-stand {
 
     float: left;
     margin: -65px;
     margin-top: -300px;
-  }
+}
 
-  .poster-image .right-diya-stand {
+.poster-image .right-diya-stand {
 
     float: right;
     margin: -65px;
     margin-top: -300px;
-  }
+}
 
-  @media (max-width: 768px) {
-   
+@media (max-width: 768px) {
+
     .poster-content h3 {
         margin-top: 20px;
     }
-      
-  }
+
+}

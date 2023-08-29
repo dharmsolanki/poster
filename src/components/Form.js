@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import $ from "jquery";
 import html2canvas from "html2canvas";
 import "../css/Form.css";
@@ -15,6 +15,7 @@ export default function Form() {
   const [image, setImage] = useState(null);
   const [contentText, setContentText] = useState("");
   const [showDownloadButton, setShowDownloadButton] = useState(false);
+  const posterRef = useRef(null);
 
   const handleNameChange = (element) => {
     const nameValue = element.target.value;
@@ -72,36 +73,25 @@ export default function Form() {
     }
   };
 
-  const handleDownload = () => {
-    // Capture the content of the box as an image using html2canvas
-    html2canvas(document.getElementById("box")).then((canvas) => {
-      // Resize the canvas to the desired dimensions (960x1280)
-      const resizedCanvas = document.createElement("canvas");
-      const ctx = resizedCanvas.getContext("2d");
-      resizedCanvas.width = 720;
-      resizedCanvas.height = 1080;
+  const handleDownload = async () => {
+    // Scroll to the specified positions
+    window.scrollTo(200,0); // Scroll to X: 200 and Y: 300
 
-      ctx.drawImage(
-        canvas,
-        0,
-        0,
-        canvas.width,
-        canvas.height,
-        0,
-        0,
-        resizedCanvas.width,
-        resizedCanvas.height
-      );
+    // Wait for a brief moment to allow the content to settle after scrolling
+    await new Promise((resolve) => setTimeout(resolve, 200)); // Adjust the delay as needed
 
-      // Convert the resized canvas to an image data URL
-      const imageDataURL = resizedCanvas.toDataURL("image/png");
+    const container = posterRef.current;
 
-      // Create a temporary link and trigger a download of the resized image
-      const link = document.createElement("a");
-      link.href = imageDataURL;
-      link.download = "shradhanjali posters.png";
-      link.click();
+    // Use html2canvas to create an image from the container content
+    const canvas = await html2canvas(container, {
+      backgroundColor: "white",
     });
+
+    // Generate the download link for the canvas image
+    const link = document.createElement("a");
+    link.href = canvas.toDataURL("image/png");
+    link.download = "shrandhanjali-poster.png";
+    link.click();
   };
 
   const handleAddMember = () => {
@@ -135,7 +125,7 @@ export default function Form() {
     formattedBesanaTime = format(parsedTime, "hh:mm a", { locale: gu });
   }
 
-  const roseImgSrc = "/rose.png";
+  const roseImgSrc = "/images/rose.png";
   const numImages = 12;
 
   return (
@@ -259,7 +249,12 @@ export default function Form() {
       </div>
 
       <div className="center-container mt-3 box">
-        <div className="center-form" id="box" style={{ display: "none" }}>
+        <div
+          className="center-form"
+          id="box"
+          style={{ display: "none" }}
+          ref={posterRef}
+        >
           <div className="top-header">
             <h3 className="first">|| ॐ ||</h3>
             <h3 className="center">|| શાંતિ ||</h3>
@@ -278,14 +273,14 @@ export default function Form() {
           </div>
           <div className="left-right-img">
             <img
-              src="/agarbatti.jpg"
+              src="/images/golden-diya-stand.png"
               alt="left"
               className="left"
               height="200px"
               width="150px"
             />
             <img
-              src="/agarbatti.jpg"
+              src="/images/golden-diya-stand.png"
               alt="right"
               className="right"
               height="200px"
