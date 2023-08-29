@@ -27,6 +27,12 @@ export default function Shrandhanjali() {
   };
 
   const handleDownload = async () => {
+    // Scroll to the specified positions
+    window.scrollTo(200, 300); // Scroll to X: 200 and Y: 300
+
+    // Wait for a brief moment to allow the content to settle after scrolling
+    await new Promise((resolve) => setTimeout(resolve, 200)); // Adjust the delay as needed
+
     const container = posterRef.current;
 
     // Use html2canvas to create an image from the container content
@@ -90,14 +96,18 @@ export default function Shrandhanjali() {
                   alt=""
                 />
 
-                <img src={posterImage} alt="" className="upload-image"/>
+                <img src={posterImage} alt="" className="upload-image" />
               </div>
+                <img src={process.env.PUBLIC_URL + "/golden-diya-stand.png"} alt="" className="left-diya-stand" height="auto" width="250px" />
+                <img src={process.env.PUBLIC_URL + "/golden-diya-stand.png"} alt="" className="right-diya-stand" height="auto" width="250px" />
             </div>
             <div className="poster-content">
-              <h3>સ્વ: {posterName}</h3>
-              <h2>ભાવપૂર્ણ શ્રદ્ધાંજલિ</h2>
-              <div className="lamp-image">
-                <img src={process.env.PUBLIC_URL + "/diya.jpg"} alt="" />
+              <div className="horizontal-scroll-content">
+                <h3>સ્વ: {posterName}</h3>
+                <h2>ભાવપૂર્ણ શ્રદ્ધાંજલિ</h2>
+                <div className="lamp-image">
+                  <img src={process.env.PUBLIC_URL + "/diya.jpg"} alt="" />
+                </div>
               </div>
             </div>
           </div>
@@ -110,7 +120,6 @@ export default function Shrandhanjali() {
             Download
           </button>
         </div>
-        
       )}
     </>
   );
