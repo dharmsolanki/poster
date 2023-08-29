@@ -53,6 +53,15 @@ export default function Shrandhanjali() {
     <>
       <div className="center-container mt-3">
         <div className="center-form">
+          <marquee
+            direction="left"
+            scrollamount="5"
+            style={{ color: "white", width: "auto", backgroundColor:"black", backgroundSize:"cover" }}
+          >
+            નોંધ:- ઇમેજ જનરેટ કર્યા પછી જો એ પરફેક્ટ શૉ ન થાય તો એ ઇમેજ ડાઉનલોડ
+            કર્યા પછી પરફેક્ટ શૉ થશે.
+          </marquee>
+
           <div className="form-group">
             <label htmlFor="name">નામ</label>
             <input
@@ -98,15 +107,30 @@ export default function Shrandhanjali() {
 
                 <img src={posterImage} alt="" className="upload-image" />
               </div>
-                <img src={process.env.PUBLIC_URL + "/images/golden-diya-stand.png"} alt="" className="left-diya-stand" height="auto" width="250px" />
-                <img src={process.env.PUBLIC_URL + "/images/golden-diya-stand.png"} alt="" className="right-diya-stand" height="auto" width="250px" />
+              <img
+                src={process.env.PUBLIC_URL + "/images/golden-diya-stand.png"}
+                alt=""
+                className="left-diya-stand"
+                height="auto"
+                width="250px"
+              />
+              <img
+                src={process.env.PUBLIC_URL + "/images/golden-diya-stand.png"}
+                alt=""
+                className="right-diya-stand"
+                height="auto"
+                width="250px"
+              />
             </div>
             <div className="poster-content">
               <div className="horizontal-scroll-content">
                 <h3>સ્વ: {posterName}</h3>
                 <h2>ભાવપૂર્ણ શ્રદ્ધાંજલિ</h2>
                 <div className="lamp-image">
-                  <img src={process.env.PUBLIC_URL + "/images/diya.jpg"} alt="" />
+                  <img
+                    src={process.env.PUBLIC_URL + "/images/diya.jpg"}
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
