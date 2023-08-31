@@ -1,16 +1,65 @@
 .index-center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  font-size: 30px;
+  background-color: #7cb8f3;
+  border-radius: 10px;
+  padding: 50px;
+}
+
+.index-center-container .border {
+
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* 320X50 ad is hide in desktop view  */
+.ad-container-320x50 {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .ad-container-320x50 {
+    display: block;
+    /* Show the ad container only on mobile devices */
+    width: 320px;
+    height: 50px;
+    background-color: #f2f2f2;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: auto;
-    font-size: 30px;
-    background-color: #7cb8f3;
-    border-radius: 10px;
-    padding: 50px;
+    border: 1px solid #ccc;
+    margin: auto;
   }
 
-  .index-center-container .border {
-
-    background-color: white;
-    border-radius: 10px;
+  .desktop-ad-left-container {
+    display: none;
   }
+
+  .desktop-ad-right-container {
+    display: none;
+  }
+}
+
+/* 160X600 ad css  */
+.desktop-ad-left-container {
+
+  float: left;
+  width: 160px;
+  height: 600px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  margin-left: -180px;
+}
+
+.desktop-ad-right-container {
+
+  float: right;
+  width: 160px;
+  height: 600px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  margin-right: -180px;
+}
