@@ -14,7 +14,11 @@ function App() {
             <Route path="/" exact element={<Index />} />
           </Routes>
           <Routes>
-            <Route path="/shradhanjali-poster" exact element={<Shrandhanjali />} />
+            <Route
+              path="/shradhanjali-poster"
+              exact
+              element={<Shrandhanjali />}
+            />
           </Routes>
         </div>
         <Routes>
