@@ -126,5 +126,31 @@ body {
     .poster-content h3 {
         margin-top: 20px;
     }
+    .ad-container-320x50 {
+        display: block;
+        /* Show the ad container only on mobile devices */
+        width: 320px;
+        height: 50px;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #ccc;
+        margin: auto;
+      }
+    
+      .ad-container-320x50 .buy-now {
+    
+        margin: 20px 0 0 -65px;
+        /* font-size: smaller; */
+      }
+    
+      .desktop-ad-left-container {
+        display: none;
+      }
+    
+      .desktop-ad-right-container {
+        display: none;
+      }
 
 }

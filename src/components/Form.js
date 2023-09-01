@@ -1,4 +1,5 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import $ from "jquery";
 import html2canvas from "html2canvas";
 import "../css/Form.css";
@@ -6,6 +7,20 @@ import { format, parse } from "date-fns";
 import { gu } from "date-fns/locale";
 
 export default function Form() {
+  const mobileAffiliateLink = "https://ekaro.in/enkr20230831s33185787";
+
+  const [isBlinking, setIsBlinking] = useState(true);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setIsBlinking((prevState) => !prevState);
+    }, 500); // Adjust the interval as needed (milliseconds)
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [besanaDate, setbesanaDate] = useState("");
@@ -75,7 +90,7 @@ export default function Form() {
 
   const handleDownload = async () => {
     // Scroll to the specified positions
-    window.scrollTo(200,0); // Scroll to X: 200 and Y: 300
+    window.scrollTo(200, 0); // Scroll to X: 200 and Y: 300
 
     // Wait for a brief moment to allow the content to settle after scrolling
     await new Promise((resolve) => setTimeout(resolve, 200)); // Adjust the delay as needed
@@ -130,6 +145,28 @@ export default function Form() {
 
   return (
     <>
+    {/* start ads  */}
+      <div className="ad-container-320x50 mb-1 position-relative">
+        <Link to={mobileAffiliateLink}>
+          <span className="badge badge-danger position-absolute top-0 end-0">
+            New
+          </span>
+          <img
+            src="https://rukminim2.flixcart.com/fk-p-flap/844/140/image/687ed4e547bd35f7.jpg?q=50"
+            alt=""
+            width="320px"
+            height="50px"
+          />
+          <span
+            className={`badge badge-danger position-absolute top-0 end-0 buy-now ${
+              isBlinking ? "blinking-text" : ""
+            }`}
+          >
+            Buy Now
+          </span>
+        </Link>
+      </div>
+      {/* end ads  */}
       <div className="center-container mt-3">
         <div className="center-form">
           <div className="form-group">
@@ -247,7 +284,28 @@ export default function Form() {
           </button>
         </div>
       </div>
-
+      {/* start ads  */}
+      <div className="ad-container-320x50 mb-1 position-relative">
+        <Link to={mobileAffiliateLink}>
+          <span className="badge badge-danger position-absolute top-0 end-0">
+            New
+          </span>
+          <img
+            src="https://rukminim2.flixcart.com/fk-p-flap/844/140/image/687ed4e547bd35f7.jpg?q=50"
+            alt=""
+            width="320px"
+            height="50px"
+          />
+          <span
+            className={`badge badge-danger position-absolute top-0 end-0 buy-now ${
+              isBlinking ? "blinking-text" : ""
+            }`}
+          >
+            Buy Now
+          </span>
+        </Link>
+      </div>
+      {/* end ads  */}
       <div className="center-container mt-3 box">
         <div
           className="center-form"

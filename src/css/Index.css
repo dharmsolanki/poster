@@ -34,6 +34,12 @@
     margin: auto;
   }
 
+  .ad-container-320x50 .buy-now {
+
+    margin: 20px 0 0 -65px;
+    /* font-size: smaller; */
+  }
+
   .desktop-ad-left-container {
     display: none;
   }
@@ -46,20 +52,52 @@
 /* 160X600 ad css  */
 .desktop-ad-left-container {
 
-  float: left;
-  width: 160px;
-  height: 600px;
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
-  margin-left: -180px;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.desktop-ad-left-container span {
+
+  font-size: larger;
+}
+
+.desktop-ad-left-container .buy-now {
+
+  margin: 50px 0 0 -200px;
+  font-size: 30px;
 }
 
 .desktop-ad-right-container {
+  margin: auto;
+  margin-top: 5px;
+}
 
-  float: right;
-  width: 160px;
-  height: 600px;
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
-  margin-right: -180px;
+.desktop-ad-right-container .buy-now {
+
+  margin: 50px 0 0 -200px;
+  font-size: 30px;
+}
+
+.desktop-ad-right-container span {
+
+  font-size: larger;
+}
+
+@keyframes blinkAndChangeColor {
+  0% {
+    opacity: 1;
+    background-color: green;
+  }
+  50% {
+    opacity: 1.5;
+    background-color: green;
+  }
+  100% {
+    opacity: 1;
+    background-color: green;
+  }
+}
+
+.blinking-text {
+  animation: blinkAndChangeColor 2s infinite; /* Adjust the duration as needed */
 }

@@ -1,8 +1,24 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import html2canvas from "html2canvas";
 import "../css/Shrandhanjali.css";
 
 export default function Shrandhanjali() {
+
+  const mobileAffiliateLink = "https://ekaro.in/enkr20230831s33185787";
+
+  const [isBlinking, setIsBlinking] = useState(true);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setIsBlinking((prevState) => !prevState);
+    }, 500); // Adjust the interval as needed (milliseconds)
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
   const [name, setName] = useState("");
   const [posterName, setPosterName] = useState("");
   const [image, setImage] = useState(null);
@@ -51,6 +67,29 @@ export default function Shrandhanjali() {
 
   return (
     <>
+      {/* start ads  */}
+      <div className="ad-container-320x50 mb-1 position-relative">
+        <Link to={mobileAffiliateLink}>
+          <span className="badge badge-danger position-absolute top-0 end-0">
+            New
+          </span>
+          <img
+            src="https://rukminim2.flixcart.com/fk-p-flap/844/140/image/687ed4e547bd35f7.jpg?q=50"
+            alt=""
+            width="320px"
+            height="50px"
+          />
+          <span
+            className={`badge badge-danger position-absolute top-0 end-0 buy-now ${
+              isBlinking ? "blinking-text" : ""
+            }`}
+          >
+            Buy Now
+          </span>
+        </Link>
+      </div>
+      {/* end ads  */}
+
       <div className="center-container mt-3">
         <div className="center-form">
           <marquee
@@ -93,6 +132,29 @@ export default function Shrandhanjali() {
           </button>
         </div>
       </div>
+
+        {/* start ads  */}
+        <div className="ad-container-320x50 mb-1 position-relative">
+        <Link to={mobileAffiliateLink}>
+          <span className="badge badge-danger position-absolute top-0 end-0">
+            New
+          </span>
+          <img
+            src="https://rukminim2.flixcart.com/fk-p-flap/844/140/image/687ed4e547bd35f7.jpg?q=50"
+            alt=""
+            width="320px"
+            height="50px"
+          />
+          <span
+            className={`badge badge-danger position-absolute top-0 end-0 buy-now ${
+              isBlinking ? "blinking-text" : ""
+            }`}
+          >
+            Buy Now
+          </span>
+        </Link>
+      </div>
+      {/* end ads  */}
 
       {showPoster && (
         <div className="container text-center">
